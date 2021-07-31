@@ -11,7 +11,7 @@ var make = function(url, shorturl){
     geturl += "&shorturl=" + shorturl;
   }
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", geturl);
+  xhr.open("GET", geturl, false);
   xhr.onreadystatechange = function(){
     if (xhr.readyState === 4 && xhr.status === 200){
       return xhr.responseText;
