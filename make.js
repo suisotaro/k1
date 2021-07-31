@@ -1,3 +1,7 @@
+var $ = function(id){
+  return document.getElementById(id);
+}
+
 var make = function(url, shorturl){
   if(url == undefined){
     return "error"
