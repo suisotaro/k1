@@ -1,7 +1,7 @@
 <script>
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "https://script.google.com/macros/s/AKfycbwAdHQKh2xvieyPqFPylLVH7GlhFPE_LL81447HNSC_LZuRbh03YMWFblnmngSxU2jGpQ/exec?u=" +
-           location.pathname.slice(1) + "&t=m", false);
+           location.pathname.slice(1), false);
   xhr.onreadystatechange = function(){
     if (xhr.readyState === 4 && xhr.status === 200){
       var res = xhr.responseText;
