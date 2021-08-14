@@ -1,10 +1,11 @@
 <script>
   var xhr = new XMLHttpRequest();
-  var url = "https://script.google.com/macros/s/AKfycbwAdHQKh2xvieyPqFPylLVH7GlhFPE_LL81447HNSC_LZuRbh03YMWFblnmngSxU2jGpQ/exec?u=" +
-           location.pathname.slice(1);
+  var url = "https://script.google.com/macros/s/AKfycbwAdHQKh2xvieyPqFPylLVH7GlhFPE_LL81447HNSC_LZuRbh03YMWFblnmngSxU2jGpQ/exec?u=";
   var r = (location.pathname.slice(-1) == "+");
   if(r){
-    url += "&t=r"
+    url += location.pathname.slice(1).slice(-1) + "&t=r"
+  } else{
+    url += location.pathname.slice(1);
   }
   xhr.open("GET", url, false);
   xhr.onreadystatechange = function(){
