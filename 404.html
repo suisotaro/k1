@@ -2,7 +2,8 @@
   var xhr = new XMLHttpRequest();
   var url = "https://script.google.com/macros/s/AKfycbwAdHQKh2xvieyPqFPylLVH7GlhFPE_LL81447HNSC_LZuRbh03YMWFblnmngSxU2jGpQ/exec?u=" +
            location.pathname.slice(1);
-  if(location.pathname.slice(-1) == "+"){
+  var r = (location.pathname.slice(-1) == "+");
+  if(r){
     url += "&t=r"
   }
   xhr.open("GET", url, false);
@@ -11,6 +12,8 @@
       var res = xhr.responseText;
       if(res == "error"){
         document.write("<p>このリンクは存在しません</p>");
+      } else if(r){
+        document.write("<p>" + res + "</p>");
       } else{
         location.replace(res);
       }
