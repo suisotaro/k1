@@ -1,0 +1,12 @@
+<script>
+  var url = "https://script.google.com/macros/s/AKfycbzQ-y1-v9GIozewAM2ivQ19VJHBxUtrIqT3apm-vrGmt4wJlDbmiVPm_z0FN3DgQtDhsg/exec" + location.search;
+
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", url, false);
+  xhr.onreadystatechange = function(){
+    if (xhr.readyState === 4 && xhr.status === 200){
+      document.write(xhr.responseText);
+    }
+  };
+  xhr.send(null);
+</script>
